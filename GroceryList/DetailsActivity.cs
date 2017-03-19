@@ -12,11 +12,10 @@ namespace GroceryList
 			base.OnCreate(bundle);
 			SetContentView(Resource.Layout.Details);
 
-			int position = 0;
+            // TODO
+            int position = Intent.GetIntExtra("ItemPosition", -1);
 
-			// TODO
-
-			var item = MainActivity.Items[position];
+            var item = MainActivity.Items[position];
 
 			FindViewById<TextView>(Resource.Id.nameTextView ).Text = "Name: "  + item.Name;
 			FindViewById<TextView>(Resource.Id.countTextView).Text = "Count: " + item.Count.ToString();
