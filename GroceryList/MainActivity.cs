@@ -43,6 +43,7 @@ namespace GroceryList
         void OnAboutClick(object sender, EventArgs e)
         {
             // TODO
+            StartActivity(typeof(AboutActivity));
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
