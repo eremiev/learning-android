@@ -6,20 +6,24 @@ using Android.Widget;
 
 namespace GroceryList
 {
-	[Activity(Label = "About")]			
-	public class AboutActivity : Activity
-	{
-		protected override void OnCreate(Bundle bundle)
-		{
-			base.OnCreate(bundle);
-			SetContentView(Resource.Layout.About);
+    [Activity(Label = "About")]
+    public class AboutActivity : Activity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.About);
 
-			FindViewById<Button>(Resource.Id.learnMoreButton).Click += OnLearnMoreClick;
-		}
+            FindViewById<Button>(Resource.Id.learnMoreButton).Click += OnLearnMoreClick;
+        }
 
-		void OnLearnMoreClick(object sender, EventArgs e)
-		{
-			// TODO
-		}
-	}
+        void OnLearnMoreClick(object sender, EventArgs e)
+        {
+            // TODO
+            var intent = new Intent();
+            intent.SetAction(Intent.ActionView);
+            intent.SetData(Android.Net.Uri.Parse("http://www.xamarin.com"));
+            StartActivity(intent);
+        }
+    }
 }
